@@ -1,0 +1,154 @@
+*{  
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #191825;
+}
+.cardel{
+    height: 35rem;
+    width: 50rem;
+    border-top: 4rem solid #114232;
+    background: transparent;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 4.5rem;
+}
+div{
+    width: 0.5rem;
+    height: 20rem;
+    background-color: #114232;
+    position: relative;
+}
+
+.cardel div::before{
+    content: "";
+    position: absolute;
+    width: 5rem;
+    aspect-ratio: 1;
+    top: 90%;
+    left: -2.3rem;
+    border-radius: 50%;
+    background-color: rgb(211, 211, 57) ;
+}
+
+.cardel div:first-child{
+    animation: left-dance 2s linear infinite;
+    transform-origin: top left;
+}
+.cardel div:last-child{
+    animation: right-dance 2s linear 1s infinite;
+    transform-origin: top left;
+}
+
+@keyframes left-dance{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(30deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes right-dance{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-30deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+h1{
+    color: #EADFB4;
+    font-size: 56px;
+    position: relative;
+    font-weight: bold;
+    text-shadow: -1px 2px 3px rgba(236, 247, 76, 0.2);
+    text-align: center;
+}
+h1::before{
+    content:"Hi..Connection..";
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-transform: capitalize;
+    color: rgb(211, 211, 57);
+    overflow: hidden;
+    border-right: 2px solid rgb(211, 211, 57);
+    animation: line 2s linear infinite;
+}
+
+@keyframes line{
+    0%{
+        width: 0%;
+    }
+    50%{
+        width: 100%;
+    }
+    100%{
+       width: 0%;
+    }
+}
+
+.loader{
+    width: 20rem;
+    top: 0;
+    left: 0;
+    position: relative;
+    aspect-ratio: 1;
+    background-color: rgb(211, 211, 57);
+    border-radius: 50%;
+    animation: circle 2s linear infinite reverse;
+}
+@keyframes circle{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.loader::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17rem;
+    aspect-ratio: 1;
+    background-color: #191825;
+    border-radius: 50%;
+}
+
+.loader::after{
+    content: "";
+    position: absolute;
+    width: 7rem;
+    aspect-ratio: 1;
+    left: 4rem;
+    top: -2rem;
+    border-radius: 50%;
+    background-color: rgb(240, 176, 57);
+    box-shadow: 0 0 44px 25px rgba(386, 42, 18, 0.8);
+   
+
+}
+
+
